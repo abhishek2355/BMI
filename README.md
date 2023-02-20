@@ -23,10 +23,11 @@
 ##  Responsive View Pictures
 #### Here is a responsive view on Oppo A-71 Android Phone
 
-<img src="https://user-images.githubusercontent.com/90473454/209437507-816f7466-8538-4cd4-8d22-4436792d9b2f.png" width="300" height="600" align="left" padding="50">
+<img src="https://user-images.githubusercontent.com/90473454/220095412-17fa8dd4-25a5-4745-a45f-9240369e9e04.png" width="300" height="600" align="left" padding="50">
 
-<img src="https://user-images.githubusercontent.com/90473454/209438234-d01a4bfb-a608-4a97-9d3c-b19cf2cadcbe.jpeg" width="300" height="600" align="left" padding="50">
+<img src="https://user-images.githubusercontent.com/90473454/220095423-8710e7e8-3103-40e6-bc36-891ce0158333.png" width="300" height="600" align="left" padding="50">
 
+<img src="https://user-images.githubusercontent.com/90473454/220095429-d19a87e1-a041-4d8c-82b6-4b741255c617.png" width="300" height="600" align="left" padding="50">
 
 
 
