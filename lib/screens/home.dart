@@ -3,7 +3,6 @@ import 'package:bmi/utils/constant/app_color.dart';
 import 'package:bmi/utils/constant/app_heights.dart';
 import 'package:bmi/utils/constant/app_string.dart';
 import 'package:bmi/utils/constant/app_text_style.dart';
-import 'package:bmi/utils/constant/app_width.dart';
 import 'package:bmi/utils/helpers/app_text_form_field.dart';
 import 'package:bmi/utils/helpers/sizebox.dart';
 import 'package:flutter/material.dart';
@@ -33,79 +32,113 @@ class MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
-        // Appdar of the BMI app
+
+        // Appbar of the BMI app
         appBar: AppBar(
+          toolbarHeight: media.height * height80,
           title: Center(
               child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Text(
                 navBarHeading,
-                style: TextStyle(fontFamily: fredokaOnefontStyle, fontSize: 30),
+                style: TextStyle(fontFamily: fredokaOnefontStyle, fontSize: media.height * 40 / 926),
               ),
               Text(
                 navBarSubHeading,
+                style: TextStyle(fontSize: media.height * 30 / 926),
               )
             ],
           )),
         ),
-        body: Container(
-          decoration: BoxDecoration(gradient: bgcolor),
-          child: Center(
-            child: SizedBox(
-              width: width300,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // BMI Image
-                    Image.asset(
+
+        // Body of the BMI app
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            decoration: BoxDecoration(gradient: bgcolor),
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  // SizedBox of the height 80
+                  const SizedBoxBMI(heightOfSizeBox: height80),
+
+                  // Image of BMI
+                  SizedBoxBMI(
+                    heightOfSizeBox: height100,
+                    child_of_BMI: Image.asset(
                       homePageImagePath,
-                      width: width100,
-                      height: height100,
                     ),
+                  ),
 
-                    // sizeBox with the height 11
-                    const SizeBoxApp(heightOfSizeBox: height11),
+                  // sizeBox with the height 80
+                  const SizedBoxBMI(
+                    heightOfSizeBox: height80,
+                  ),
 
-                    // weight textformfield
-                    TextFormFields(
+                  // weight textformfield
+                  SizedBoxBMI(
+                    heightOfSizeBox: height50,
+                    child_of_BMI: TextFormFields(
                       weightcontroller: weightcontroller,
                       textFormFieldsLableText: weightTextFormFieldHintText,
-                      iconField: const Icon(Icons.line_weight),
+                      iconField: Icon(
+                        Icons.line_weight,
+                        size: media.height * height25,
+                        color: Colors.green,
+                      ),
                     ),
+                  ),
 
-                    // SizeBox with the height 11
-                    const SizeBoxApp(
-                      heightOfSizeBox: height11,
-                    ),
+                  // sizeBox with the height 20
+                  const SizedBoxBMI(
+                    heightOfSizeBox: height20,
+                  ),
 
-                    // height in feet textformfield
-                    TextFormFields(
+                  // Height in feets textformfield
+                  SizedBoxBMI(
+                    heightOfSizeBox: height50,
+                    child_of_BMI: TextFormFields(
                         weightcontroller: feetcontroller,
                         textFormFieldsLableText: heightInFeetTextFormFieldHintText,
-                        iconField: const Icon(Icons.height_outlined)),
+                        iconField: Icon(
+                          Icons.height_outlined,
+                          size: media.height * height25,
+                          color: Colors.green,
+                        )),
+                  ),
 
-                    // SizeBox with the height 11
-                    const SizeBoxApp(
-                      heightOfSizeBox: height11,
-                    ),
+                  // sizeBox with the height 20
+                  const SizedBoxBMI(
+                    heightOfSizeBox: height20,
+                  ),
 
-                    //  height in inches textformfield
-                    TextFormFields(
+                  // Height in inches TextFormFields
+                  SizedBoxBMI(
+                    heightOfSizeBox: height50,
+                    child_of_BMI: TextFormFields(
                         weightcontroller: inchcontroller,
                         textFormFieldsLableText: heightInInchesTextFormFieldHintText,
-                        iconField: const Icon(Icons.height_rounded)),
+                        iconField: Icon(
+                          Icons.height_rounded,
+                          size: media.height * height25,
+                          color: Colors.green,
+                        )),
+                  ),
 
-                    // SizeBox with the height 21
-                    const SizeBoxApp(
-                      heightOfSizeBox: height21,
-                    ),
+                  // sizeBox with the height 80
+                  const SizedBoxBMI(
+                    heightOfSizeBox: height80,
+                  ),
 
-                    // Calculate Button
-                    ElevatedButton(
+                  // Calculate Button
+                  SizedBoxBMI(
+                    heightOfSizeBox: height50,
+                    child_of_BMI: ElevatedButton(
                         onPressed: () {
                           var msg = "";
 
@@ -119,7 +152,6 @@ class MyHomePageState extends State<MyHomePage> {
                                   overweightColor1,
                                   overWeightColor2,
                                 ]);
-                                textcolor = Colors.black;
                               } else if (double.parse(result) < 18) {
                                 msg = underWeightMessage;
                                 bgcolor = const LinearGradient(colors: [
@@ -147,23 +179,35 @@ class MyHomePageState extends State<MyHomePage> {
                             finalresult = "$msg \n Your BMI is: $result";
                           }
                         },
-                        child: const Text(homePageButtonText)),
+                        child: Text(
+                          homePageButtonText,
+                          style: TextStyle(fontSize: media.height * height25),
+                        )),
+                  ),
 
-                    // Sizebox with height 11
-                    const SizeBoxApp(
-                      heightOfSizeBox: height11,
-                    ),
+                  // sizeBox with the height 40
+                  const SizedBoxBMI(
+                    heightOfSizeBox: height40,
+                  ),
 
-                    Text(
-                      finalresult,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 19,
-                        color: textcolor,
+                  // Final result with BMI
+                  SizedBoxBMI(
+                    heightOfSizeBox: height30,
+                    child_of_BMI: Center(
+                      child: Text(
+                        finalresult,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: media.height * height25,
+                          color: textcolor,
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBoxBMI(
+                    heightOfSizeBox: height186,
+                  )
+                ],
               ),
             ),
           ),

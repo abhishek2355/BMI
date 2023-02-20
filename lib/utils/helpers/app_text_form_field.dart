@@ -1,3 +1,4 @@
+import 'package:bmi/utils/constant/app_heights.dart';
 import 'package:flutter/material.dart';
 
 class TextFormFields extends StatelessWidget {
@@ -14,15 +15,16 @@ class TextFormFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return SizedBox(
       child: TextFormField(
         controller: weightcontroller,
+        style: TextStyle(fontSize: media.height * height25),
         decoration: InputDecoration(
-            label: Text(
-              textFormFieldsLableText,
-              style: const TextStyle(color: Colors.black, fontSize: 20),
-            ),
-            prefixIcon: iconField),
+          hintText: textFormFieldsLableText,
+          hintStyle: const TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
+          prefixIcon: iconField,
+        ),
         keyboardType: TextInputType.number,
       ),
     );
