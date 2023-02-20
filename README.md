@@ -30,6 +30,4 @@
 
 
 
-"# BMI-Calculator" 
-"# BMI" 
-"# BMI" 
+
