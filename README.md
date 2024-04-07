@@ -21,16 +21,11 @@
 + Finally, I got the required view with a responsive layout. See the pictures below.
 
 ##  Responsive View Pictures
-#### Here is a responsive view on Oppo A-71 Android Phone
+#### Here is a responsive view on the Oppo A-71 Android Phone
 
-<p>
-<img src="https://user-images.githubusercontent.com/90473454/220095412-17fa8dd4-25a5-4745-a45f-9240369e9e04.png"  align="left" padding="50">
- <br>
-</p>
-
-<p style="margin-top: 30px;" align="center">
+<p style="margin: 30 px;" align="center">
 <img src="https://user-images.githubusercontent.com/90473454/220095423-8710e7e8-3103-40e6-bc36-891ce0158333.png" width="300" height="600" align="left" padding="50">
-<img src="https://user-images.githubusercontent.com/90473454/220095429-d19a87e1-a041-4d8c-82b6-4b741255c617.png" width="300" height="600" align="left" padding="50">
+<!-- <img src="https://user-images.githubusercontent.com/90473454/220095429-d19a87e1-a041-4d8c-82b6-4b741255c617.png" width="300" height="600" align="left" padding="50"> -->
 <img src="https://user-images.githubusercontent.com/90473454/220100294-c6492094-f857-4abd-b171-43e5ae2108da.png" width="300" height="600" align="left" padding="50">
 </p>
 
